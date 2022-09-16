@@ -1,0 +1,40 @@
+.inputfield__wrapper {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 30px;
+    background: var(--white);
+    gap: 10px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.inputfield__input {
+    flex: 1;
+    background: none;
+    border: none;
+    font-size: inherit;
+}
+
+.inputfield__input:focus {
+    outline: none;
+}
+
+.inputfield__btn {
+    width: fit-content;
+    cursor: pointer;
+    background: none;
+    font-size: inherit;
+    border: none;
+    color: var(--blue);
+    border-bottom: 1px dashed transparent;
+    font-weight: bold;
+}
+
+.inputfield__btn:hover {
+    border-bottom-color: var(--blue);
+}
