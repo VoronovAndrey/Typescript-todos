@@ -11,20 +11,22 @@ interface Props {
     changeTaskHandler: (value: string) => void;
     deleteHandler: () => void;
     doneHandler: () => void;
+    dragHandler: (e: React.DragEvent<HTMLDivElement>) => void;
 }
 
-const Task: React.FC<Props> = ({ todo, isDone, changeTaskHandler, deleteHandler, doneHandler }: Props) => {
+const Task: React.FC<Props> = ({ todo, isDone, changeTaskHandler, deleteHandler, doneHandler, dragHandler }: Props) => {
     const [isEdit, setIsEdit] = useState<Boolean>(false)
 
     const onBlurHandler = (value: any) => {
-        // console.log(value);
         if (value.trim() !== ''){
             changeTaskHandler(value)
         }
         setIsEdit(false)
     }
     return (
-        <div className='task__wrapper'>
+        <div className='task__wrapper' draggable={true}
+            onDragStart={dragHandler}
+        >
             {isEdit ?
                 <input type="text"
                     defaultValue={todo}
